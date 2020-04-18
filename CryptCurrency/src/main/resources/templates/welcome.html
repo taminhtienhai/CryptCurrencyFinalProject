@@ -1,0 +1,49 @@
+<!--
+	Welcome Page for user who login
+	@author HaiTMT
+-->
+<!DOCTYPE html>
+<html th:replace="fragments/_layout :: layout(~{:: title},~{:: #links},~{:: #scripts},~{:: #content})">
+<!-- 
+If you dont have one of parameters here, please set it to _ -->
+
+<head>
+    <!-- The Title (Remember always set this) -->
+    <title>Welcome to my Website</title>    
+
+    <!-- The Block contain my CSS -->
+    <th:block id="links">
+
+        <!-- This is Page Self CSS -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/welcome.css}">
+
+        <!-- Utils CSS -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/utils/align.css}">
+
+    </th:block>
+
+</head>
+
+<body>
+    
+    <th:block id="content">
+        <main class="ultimate-center-row">
+            <article>
+                <!-- The Bigest One for hard impressing Customer who access Page -->
+                <p th:utext='#{welcome.quote.big-quote}'>The section Quote</p>
+                <!-- Guide user to create wallet quickly -->
+                <a th:href="@{/new/wallet}">
+                    <span th:utext='#{welcome.btn.start}'>Start new Wallet</span>
+                </a>
+            </article>
+        </main>
+    </th:block>
+
+</body>
+
+    <!-- The Block contain Page Self Javascripts -->
+    <th:block id="scripts">
+        <script type="text/javascript" th:src="@{/js/welcome.js}"></script>
+    </th:block>
+
+</html>

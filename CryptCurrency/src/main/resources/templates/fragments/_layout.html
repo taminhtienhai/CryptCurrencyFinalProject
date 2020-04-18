@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="layout(title, links, scripts, content)" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title th:replace="${title}">This is Title</title>
+
+</head>
+
+<body>
+    <!-- Fixed Navbar -->
+    <nav th:replace="@{/fragments/_nav} :: #navbar"></nav>
+
+    <!-- Your custom content -->
+    <section th:replace="${content}"></section>
+
+
+    <!-- Import Bootstrap -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.4.1/css/bootstrap.min.css}" />
+
+    <!-- Import Font Awesome Icon -->
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/5.13.0/css/fontawesome.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/5.13.0/css/solid.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/5.13.0/css/brands.min.css}" />
+
+    <!-- Import CSS Init file -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/init.css}" />
+
+    <!-- Import your CSS here -->
+    <th:block th:replace="${links}" />
+</body>
+
+<!-- Import needed JS like ( JQuery, PopperJS, BootstrapJS ) -->
+<script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/popper.js/1.14.3/umd/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/4.4.1/js/bootstrap.min.js}"></script>
+
+<!-- Import your JS here -->
+<th:block th:replace="${scripts}" />
+
+</html>

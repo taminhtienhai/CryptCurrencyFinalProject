@@ -1,0 +1,17 @@
+#dashboard-menu {
+    display: flex;
+    flex-flow: row;
+    align-items: stretch;
+    
+    margin: 1vw 1vw;
+    background-color: aliceblue;
+}
+
+#dashboard-menu > li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+#dashboard-tab-content {
+    margin: 0 1vw;
+}

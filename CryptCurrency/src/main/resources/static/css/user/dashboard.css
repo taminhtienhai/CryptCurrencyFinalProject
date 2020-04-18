@@ -1,0 +1,28 @@
+/** Arrange Layout **/
+
+body {
+    grid-template-areas: 
+        "nav  nav  nav"
+        "side main art";
+    grid-template-rows: 10% auto;
+    grid-template-columns: 20% 40% auto;
+    column-gap: 2vw;
+    row-gap: 2vh;
+}
+
+/** Using the same layout for frame **/
+
+.frame {
+    border: 1px solid #F0F2F7;
+    border-radius: 1.5% 1.5% 0 0;
+}
+
+aside {
+    margin-left: 2vw;
+}
+
+article {
+    margin-right: 2vw;
+}
+
+

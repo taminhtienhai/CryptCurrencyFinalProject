@@ -1,0 +1,66 @@
+<!--
+	Create User Wallet
+	@author HaiTMT
+-->
+<!DOCTYPE html>
+<html th:replace="fragments/_layout :: layout(~{:: title},~{:: #links},~{:: #scripts},~{:: #content})">
+<!-- 
+If you dont have one of parameters here, please set it to _ -->
+
+<head>
+    <!-- The Title (Remember always set this) -->
+    <title>Create your Wallet</title>
+
+    <!-- The Block contain my CSS -->
+    <th:block id="links">
+        <!-- This is Page Self CSS -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/user/new_wallet.css}">
+    </th:block>
+
+</head>
+
+<body>
+    <th:block id="content">
+        <header class="flex-center-vertical">
+            This's the first time you come here. So please fill those for completion preparation your Wallet. Thank you for using our service.
+        </header>
+        <!-- Form where user can write their etrance information -->
+        <main id="left" class="flex-center-vertical">
+
+            <!-- Form  -->
+            <form th:action="@{/create/wallet}" th:object="${wallet}" th:method="post" autocomplete="off">
+                <div class="form-group">
+                    <label for="pk">
+                    	Your Wallet Id
+                	</label>
+                    <input type="text" th:field="*{pk}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="display_name">Display Name</label>
+                    <input type="text" th:field="*{display_name}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" th:field="*{email}" class="form-control" />
+                </div>
+            </form>
+        </main>
+
+        <!-- Just for Decoration -->
+        <article id="right" title="right-content">
+            <a th:href="@{/welcome/dashboard}">
+                <i class="fas fa-wallet"></i>
+            </a>
+            <p>All being prepare</p>
+            <p>Let take the first look your wallet</p>
+        </article>
+
+    </th:block>
+</body>
+
+<!-- The Block contain Page Self Javascripts -->
+<th:block id="scripts">
+    <script type="text/javascript" src=""></script>
+</th:block>
+
+</html>

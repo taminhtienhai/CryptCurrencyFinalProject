@@ -1,0 +1,63 @@
+/** Make sure the content not breek parent **/
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+/** Definite say 'All Layout' must be use Grid Layout for arrangement **/
+
+body {
+  /** we use Grid layout for all page **/
+  display: grid;
+  /** height expansion **/
+  height: 100vh;
+  /** Hide scrollbar for IE and Edge **/
+  -ms-overflow-style: none;
+  /* margin: 0; */
+}
+
+/** Hide scrollbar for Chrome, Safari and Opera **/
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/** Name all layout tag **/
+
+div {
+  grid-area: div;
+}
+
+body > form {
+  grid-area: form;
+}
+
+body > header {
+  grid-area: header;
+}
+
+body > nav {
+  grid-area: nav;
+}
+
+body > main {
+  grid-area: main;
+}
+
+body > aside {
+  grid-area: side;
+}
+
+body > section {
+  grid-area: sec;
+}
+
+body > article {
+  grid-area: art;
+}
+
+body > footer {
+  grid-area: sec;
+}

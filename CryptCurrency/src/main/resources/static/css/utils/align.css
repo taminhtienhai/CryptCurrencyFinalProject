@@ -1,0 +1,25 @@
+.horizon-center {
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.ultimate-center-row {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.ultimate-center-column {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+}

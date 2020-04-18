@@ -1,0 +1,75 @@
+<!--
+	Show user coin analystic
+	@author HaiTMT
+-->
+<!DOCTYPE html>
+<html th:replace="fragments/_layout :: layout(~{:: title},~{:: #links},~{:: #scripts},~{:: #content})">
+<!-- 
+If you dont have one of parameters here, please set it to _ -->
+
+<head>
+    <!-- The Title (Remember always set this) -->
+    <title>Dashboard</title>
+
+    <!-- The Block contain my CSS -->
+    <th:block id="links">
+        <!-- This is Page Self CSS -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/user/dashboard.css}">
+
+        <!-- Tab CSS -->
+            <!-- Dashboard Tab -->
+            <link rel="stylesheet" type="text/css" th:href="@{/css/user/frag/dashboard_tab.css}">
+    </th:block>
+
+    <!-- The Block contain Page Self Javascripts -->
+    <th:block id="scripts">
+
+    </th:block>
+
+</head>
+
+<body>
+    <th:block id="content">
+
+            <!-- Menu -->
+            <aside>
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a  class="nav-link active" id="dashboard-tab" href="#dashboard"
+                        data-toggle="pill"  role="tab" aria-controls="dashboard" aria-selected="true">
+                        <span class="dashboard-link-name">Dashboard</span>
+                    </a>
+                    <a  class="nav-link" id="buy-coin-tab" href="#buy-coin"
+                        data-toggle="pill" role="tab" aria-controls="buy-coin" aria-selected="false">
+                        <span class="dashboard-link-name">Buy Bitcoin</span>
+                    </a>
+                    <a  class="nav-link" id="sell-coin-tab" href="#sell-coin"
+                        data-toggle="pill"  role="tab" aria-controls="sell-coin" aria-selected="false">
+                        <span class="dashboard-link-name">Sell Bitcoin</span>
+                    </a>
+                    <a  class="nav-link" id="history-tab" href="#history" 
+                        data-toggle="pill"  role="tab" aria-controls="history" aria-selected="false">
+                        <span class="dashboard-link-name">History</span>
+                    </a>
+                  </div>
+            </aside>
+
+            <!-- Content -->
+            <main class="frame tab-content">
+                <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                    <nav th:replace="user/frag/_dashboard_tab :: ul"></nav>
+                    <main th:replace="user/frag/_dashboard_tab :: .tab-content"></main>
+                </div>
+                <div class="tab-pane fade" id="buy-coin" role="tabpanel" aria-labelledby="buy-coin-tab"></div>
+                <div class="tab-pane fade" id="sell-coin" role="tabpanel" aria-labelledby="sell-coin-tab"></div>
+                <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab"></div>
+            </main>
+
+            <!-- Info -->
+            <article class="frame">
+
+            </article>
+    </th:block>
+
+</body>
+
+</html>
