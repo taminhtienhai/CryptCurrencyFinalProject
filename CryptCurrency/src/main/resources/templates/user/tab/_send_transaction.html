@@ -1,0 +1,13 @@
+<th:block id="right-content">
+    <form id="block" th:action="@{/transactions/send}" method="POST">
+        <article>
+            <p>Wallet Id: xxx-xxx-xxx-xxx-xxx</p>
+            <p>To: xxx-xxx-xxx-xxx-xxx</p>
+            <p>Amount: 1B</p>
+        </article>
+    </form>
+    <footer class="d-flex justify-content-end">
+        <input type="submit" form="block" class="btn btn-success" value="Send Transaction">
+    </footer>
+</th:block>
+

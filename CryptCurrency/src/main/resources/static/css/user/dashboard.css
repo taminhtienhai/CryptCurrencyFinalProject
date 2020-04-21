@@ -19,10 +19,36 @@ body {
 
 aside {
     margin-left: 2vw;
+    margin-top: 1vw;
+}
+
+/** Align Text and Icon in nav **/
+
+aside button {
+    text-align: start;
+    font-size: 1.3em;
+}
+
+aside button > i:not(:first-child) {
+    margin-right: 1vw;
+    margin-top: 1vh;
+}
+
+aside button:first-child {
+    font-weight: 650;
 }
 
 article {
     margin-right: 2vw;
+}
+
+button[class*=active] {
+    background-color: royalblue !important;
+    transition: 0.3s !important;
+}
+
+button[class*=active]:active {
+    box-shadow: none !important;
 }
 
 

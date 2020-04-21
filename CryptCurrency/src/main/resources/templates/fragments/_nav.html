@@ -13,7 +13,7 @@
     <!-- Main bar -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
 
-        <!-- Region contain function -->
+        <!-- Create Wallet function, if user already had a Wallet, this will be disable-->
         <ul id='nav-leftbar' class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link btn btn-primary" href="#">
@@ -23,7 +23,26 @@
             </li>
         </ul>
 
-        <!-- Region locale, logout function -->
+        <!-- Send / Buy Request / Sell Request function -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#send/transaction" class="nav-link" onclick="renderSendTransaction()">
+                    <span>Send</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/request/buy" class="nav-link">
+                    <span>Buy Request</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/request/sell" class="nav-link">
+                    <span>Sell Request</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Change Language function -->
         <ul id='nav-righbar' class="navbar-nav ml-auto">
 
             <!-- Set Locale -->

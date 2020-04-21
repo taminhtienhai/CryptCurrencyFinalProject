@@ -1,0 +1,34 @@
+<!--
+	Decription
+	@author ???
+-->
+<!DOCTYPE html>
+<html th:replace="fragments/_layout :: layout(~{:: title},~{:: #links},~{:: #scripts},~{:: #content})">
+<!-- 
+If you dont have one of parameters here, please set it to _ -->
+
+<head>
+    <!-- The Title (Remember always set this) -->
+    <title>Title</title>    
+
+    <!-- The Block contain my CSS -->
+    <th:block id="links">
+
+    </th:block>
+
+    <!-- The Block contain Page Self Javascripts -->
+    <th:block id="scripts">
+    </th:block>
+
+</head>
+
+<body>
+    
+    <!-- Body content, please fill this -->
+    <th:block id="content">
+
+    </th:block>
+
+</body>
+
+</html>

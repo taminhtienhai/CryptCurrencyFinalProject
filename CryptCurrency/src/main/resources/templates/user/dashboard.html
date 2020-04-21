@@ -15,15 +15,17 @@ If you dont have one of parameters here, please set it to _ -->
     <th:block id="links">
         <!-- This is Page Self CSS -->
         <link rel="stylesheet" type="text/css" th:href="@{/css/user/dashboard.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/icon/bitcoin/flaticon.css}">
 
-        <!-- Tab CSS -->
-            <!-- Dashboard Tab -->
-            <link rel="stylesheet" type="text/css" th:href="@{/css/user/frag/dashboard_tab.css}">
+        <!-- Addition Styles -->
+        <th:block th:replace="~{:: #links_custom} ?: _"></th:block>
     </th:block>
 
     <!-- The Block contain Page Self Javascripts -->
     <th:block id="scripts">
-
+        <script type="text/javascript" th:src="@{/js/user/dashboard.js}"></script>
+        <!-- Addition Scripts -->
+        <th:block th:replace="~{:: #scripts_custom} ?: _"></th:block>
     </th:block>
 
 </head>
@@ -33,40 +35,34 @@ If you dont have one of parameters here, please set it to _ -->
 
             <!-- Menu -->
             <aside>
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a  class="nav-link active" id="dashboard-tab" href="#dashboard"
-                        data-toggle="pill"  role="tab" aria-controls="dashboard" aria-selected="true">
+                <div id="nav-tab" class="list-group list-group-flush">
+                    <button id="dashboard-tab" class="list-group-item active" onclick="renderDashboardTab()">
+                        <i class="fas fa-home"></i>
                         <span class="dashboard-link-name">Dashboard</span>
-                    </a>
-                    <a  class="nav-link" id="buy-coin-tab" href="#buy-coin"
-                        data-toggle="pill" role="tab" aria-controls="buy-coin" aria-selected="false">
+                    </button>
+                    <button id="buy-coin-tab" class="list-group-item">
+                        <i class="flaticon-bitcoin-shop"></i>
                         <span class="dashboard-link-name">Buy Bitcoin</span>
-                    </a>
-                    <a  class="nav-link" id="sell-coin-tab" href="#sell-coin"
-                        data-toggle="pill"  role="tab" aria-controls="sell-coin" aria-selected="false">
+                    </button>
+                    <button id="sell-coin-tab" class="list-group-item">
+                        <i class="flaticon-bitcoin-symbol-inside-circulating-arrows"></i>
                         <span class="dashboard-link-name">Sell Bitcoin</span>
-                    </a>
-                    <a  class="nav-link" id="history-tab" href="#history" 
-                        data-toggle="pill"  role="tab" aria-controls="history" aria-selected="false">
+                    </button>
+                    <button id="history-tab" class="list-group-item">
+                        <i class="flaticon-bitcoin-symbol-inside-a-timer-variant"></i>
                         <span class="dashboard-link-name">History</span>
-                    </a>
-                  </div>
+                    </button>
+                </div>
             </aside>
 
             <!-- Content -->
-            <main class="frame tab-content">
-                <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    <nav th:replace="user/frag/_dashboard_tab :: ul"></nav>
-                    <main th:replace="user/frag/_dashboard_tab :: .tab-content"></main>
-                </div>
-                <div class="tab-pane fade" id="buy-coin" role="tabpanel" aria-labelledby="buy-coin-tab"></div>
-                <div class="tab-pane fade" id="sell-coin" role="tabpanel" aria-labelledby="sell-coin-tab"></div>
-                <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab"></div>
+            <main class="frame">
+                <th:block th:replace="~{user/tab/__${content_main}__ :: #main-content} ?: _"></th:block>
             </main>
 
             <!-- Info -->
             <article class="frame">
-
+                <th:block th:replace="~{user/tab/__${content_right}__ :: #right-content} ?: _"></th:block>
             </article>
     </th:block>
 

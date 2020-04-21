@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import iuh.project.model.Wallet;
 
+
 /**
  * UserController
  * @author HaiTMT
@@ -34,8 +35,21 @@ public class UserController {
      */
     @GetMapping(value = {"/welcome/dashboard"})
     public String dashBoardPage(Model model) {
-
+        model.addAttribute("content_main", "_dashboard_tab");
         return "user/dashboard";
     }
+
+    /**
+     * Send Transaction Page
+     * @param model
+     * @return 
+     */
+    @GetMapping(value = {"/transactions/send"})
+    public String transactionSenderPage(Model model) {
+        model.addAttribute("content_main", "_add_transaction");
+        model.addAttribute("content_right", "_send_transaction");
+        return "user/dashboard";
+    }
+    
     
 }
