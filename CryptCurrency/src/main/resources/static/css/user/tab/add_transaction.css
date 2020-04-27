@@ -1,0 +1,42 @@
+/** **/
+
+body > main {
+    position: relative;
+}
+
+body > main > header {
+    display: flex;
+    flex-direction: row;
+    /****/
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+body > main > header span:not(:first-child) {
+    margin-left: auto;
+}
+
+/**  **/
+
+input[name=from] {
+	flex: 80%;
+}
+
+input[name=currency] {
+	flex: 20%;
+}
+
+/** Make Textarea more larger **/
+
+textarea {
+    line-height: 1em;
+}
+
+/** Submit Style **/ 
+
+body > main input[type=submit] {
+    position: absolute;
+    right: 1vw;
+    bottom: 1vw;
+}

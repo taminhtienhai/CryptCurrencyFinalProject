@@ -10,6 +10,16 @@ body {
     row-gap: 2vh;
 }
 
+/** Add some paddng for Main and Right content **/
+
+body > main {
+    padding: 1vw;
+}
+
+body > article {
+    padding: 1vw;
+}
+
 /** Using the same layout for frame **/
 
 .frame {

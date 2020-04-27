@@ -1,0 +1,20 @@
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon span {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    color: #aaa;
+    transition: .3s;
+}
+
+.input-with-icon input {
+    padding-right: 15%;
+}
+
+.input-with-icon input:focus + span {
+    color: goldenrod;
+    transition: .3s;
+}

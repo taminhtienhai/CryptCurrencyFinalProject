@@ -1,17 +1,14 @@
 /** Active button after click **/
-$('aside button').click((e) => { 
+$("aside button").click(function (e) { 
     e.preventDefault()
     $('aside').find(".active").removeClass("active")
     $(this).addClass("active")
 })
 
 function renderView(path, selector) {
-    $.get(
-        path,
-        (view) => {
-            $(selector).empty().append(view)
-        }
-    )
+    $.get(path).done((view) => {
+        $(selector).empty().append(view)
+    })
 }
 
 /**
